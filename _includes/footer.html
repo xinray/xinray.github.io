@@ -3,7 +3,7 @@
     <div class="container">
         <div class="legal">
             <ul class="l-footer-contact">
-                <li class="email"><i class="fa fa-star"></i>&nbsp;&nbsp;Ray的博客 &nbsp;&nbsp;Contact me at:</li>
+                <li class="email"><i class="fa fa-star"></i>&nbsp;&nbsp;Rayad 的博客 &nbsp;&nbsp;Contact me at:</li>
                 <a href="mailto:{{ my.contact.email }}"><li class="email"><i class="fa fa-envelope"></i></li></a>
                 <a href="{{ my.contact.github }}"><li class="github"><i class="fa fa-github"></i> </li></a>
                 <a href="{{ my.contact.linkedin }}"><li class="linkedin"><i class="fa fa-linkedin"></i></li></a>
@@ -12,6 +12,10 @@
 
         <p id="legal">
             Powered by <a href="http://jekyllrb.com">Jekyll</a> &amp; <a href="http://github.com">GitHub</a> | Theme designed by <a href="http://unifreak.github.io">UniFreak</a>
+        </p>
+
+        <p class="copyright">
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
         </p>
     </div>
 </footer>
@@ -22,3 +26,5 @@
 <!-- 百度统计 -->
 <script type="text/javascript" src="{{crturl}}javascripts/baidu_statistics.js"></script>
 {% endif %}
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
