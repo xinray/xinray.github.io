@@ -573,7 +573,9 @@ hr {
   padding-left: 15px;
   padding-right: 15px;
 }
-
+.col-lg-5 {
+  padding-top: 15px;
+}
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
 }
@@ -4203,19 +4205,27 @@ ul {
  * ----------------------------------------------------------------------------------------
  */
 #l-header {
-  background-color: #1c3340;
+  background-color: #E0E0E0;
   color: white;
+}
+#l-header .l-header-ln{
+  background-color: #2ca6cb;
+  padding-top: 50px;
+}
+#l-header .l-header-nav{
+  background-color: #E0E0E0;
+  margin-top: 20px;
 }
 #l-header h1 {
   margin-top: 0;
   margin-bottom: 35px;
-  font: normal small-caps bold 17rem/9.5rem "verdana",helvetica, sans-serif;
+  font: normal small-caps bold 10rem/9rem "verdana",helvetica, sans-serif;
   letter-spacing: -1rem;
   margin-left: -2rem;
 }
 #l-header p {
-  font: normal bold 3rem/1.5rem "verdana",sans-serif;
-  margin-top: 3.5rem;
+  font: normal bold 2rem/1.5rem "verdana",sans-serif;
+  margin-top: 2rem;
   text-align: right;
   color: #d6d6d6;
 }
@@ -4623,9 +4633,20 @@ ul.tags {
   margin-top: 7rem;
   padding: 1.5rem;
 }
-#l-footer h3 {
+#l-footer .footer-message h3 {
   text-align: center;
   margin-bottom: 0.5rem;
+}
+#l-footer .l-footer-contact{
+  overflow: hidden;
+  margin:0 auto;
+  width:350px;
+}
+#l-footer .l-footer-contact li{
+  float: left;
+  color:#bbbbbb;
+  margin:0 5px;
+  font-size: 16px;
 }
 #l-footer address {
   text-align: right;
@@ -4639,7 +4660,11 @@ ul.tags {
 }
 #l-footer #legal {
   text-align: center;
-  color: #8d8d8d;
+  color: #bbbbbb;
+}
+#l-footer .footer-message{
+  width:50%;
+  float: left;
 }
 
 @media (max-width: 768px) {
