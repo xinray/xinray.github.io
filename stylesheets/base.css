@@ -4423,6 +4423,7 @@ ul {
 #l-main #about {
   background-color: white;
   margin-bottom: 2.5rem;
+  margin-top: 20px;
 }
 #l-main #about header, #l-main #about section {
   padding-left: 7.5rem;
@@ -4437,7 +4438,7 @@ ul {
   max-height: 18rem;
 }
 #l-main #about header img {
-  max-width: 17rem;
+  max-width: 15rem;
   position: relative;
   top: 9rem;
   border-radius: 50%;
@@ -4457,7 +4458,7 @@ ul {
   border-bottom: 3px solid #1C3340;
 }
 #l-main #about section#intro h2 {
-  font-size: 7rem;
+  font-size: 5rem;
   margin-left: 21.2rem;
   margin-top: -2rem;
   border-bottom: none;
@@ -4475,7 +4476,7 @@ ul {
 #l-main #about section#skillsets ul li {
   font-size: 2rem;
   display: inline;
-  background-color: #000000;
+  background-color: #D6DBDF;
   color: white;
   border: 1px solid #1C3340;
   padding: 3px;
