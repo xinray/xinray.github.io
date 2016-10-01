@@ -4510,6 +4510,7 @@ ul {
   margin: 0 auto;
   max-width: auto;
   margin-top: 3rem;
+  width:350px;
 }
 #l-main div#paginator a, #l-main div#paginator span {
   min-width: 2rem;
