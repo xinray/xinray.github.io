@@ -37,6 +37,9 @@ collections:
     qqGroupGuide:
         output: true
 
+duoshuo_shortname: xinray
+duoshuo_url: "http://wxinray.github.io"
+
 defaults:
   - scope:
         path: ""
