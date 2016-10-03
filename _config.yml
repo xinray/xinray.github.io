@@ -17,7 +17,7 @@ excerpt_separator: "[-----]"
 
 #mode: dev
 mode: product
-url: https://xinray.github.io/
+url: https://wxinray.com/
 devurl: http://localhost:4000/
 name: Ray
 title: xinray | Another yet unique freak is showing a freakshow
@@ -32,6 +32,8 @@ my:
         email: wxinray@outlook.com
         github: http://www.github.com/xinray
         linkedin: http://www.linkedin.com/in/wanxinray
+        stackoverflow: http://stackoverflow.com/users/6273960/ray
+        csdn: http://blog.csdn.net/xin_ray
 
 collections:
     qqGroupGuide:
