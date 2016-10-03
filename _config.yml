@@ -20,7 +20,7 @@ mode: product
 url: https://xinray.github.io/
 devurl: http://localhost:4000/
 name: Ray
-title: xinray | Another yet unique freak is showing a freakshow
+title: ray's blog
 description: "XinRay's personal weblog, on coding or such stuff"
 
 my:
@@ -48,8 +48,5 @@ defaults:
         type: "posts"
     values:
         excerpt: "{{ page.content }} | slice: 0 300"
-  - scope:
-        path: ""
-        type: "qqGroupGuide"
     values:
         layout: markdownreader_bare
