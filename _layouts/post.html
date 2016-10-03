@@ -27,6 +27,8 @@
                 </header>
 
                 {{ content }}
+                {% include reward.html %}
+
             </div>
 
             <div id="markdown-outline" class="col-lg-3">
@@ -37,6 +39,7 @@
     </div>
 
     {% include footer.html %}
+    {% include backToTop.html %}
 
     <script type="text/javascript" src="{{crturl}}javascripts/markdownreader.js"></script>
 </body>
