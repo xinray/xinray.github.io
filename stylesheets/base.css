@@ -4235,6 +4235,9 @@ ul {
 #l-header .navbar {
   background-color: white;
 }
+#l-header .home {
+  background-color: #2ca6cb;
+}
 #l-header .navbar i {
   position: absolute;
   top: 1.9rem;
