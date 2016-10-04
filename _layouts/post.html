@@ -29,6 +29,14 @@
                 {{ content }}
                 {% include reward.html %}
 
+                <div id="nextAndprevPage">
+                    {% if page.prev-title %}
+                    <div class="prevPage nppage" >上一篇:<a href="{{crturl}}{{page.prev-url}}"> {{page.prev-title}}</a></div>
+                    {% endif %}
+                    {% if page.next-title %}
+                    <div class="nextPage nppage">下一篇: <a href="{{crturl}}{{page.next-url}}">{{page.next-title}}</a></div>
+                    {% endif %}
+                </div>
             </div>
 
             <div id="markdown-outline" class="col-lg-3">

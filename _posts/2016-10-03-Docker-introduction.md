@@ -3,7 +3,9 @@ title: "Docker 学习笔记－－介绍"
 layout: post
 category: Server
 tags: [docker]
-excerpt: "阅读 PHP 参考文档时做的笔记和整理. 为整个 PHP 语法提供一个简明的地图. 在面试前或者平时浏览一遍, 以便检查自己是否遗忘了某些重要的 PHP 及基本特性"
+excerpt: "本文主要介绍了Docker的好处,与VM比较,并介绍了组成及架构。"
+next-url: "note/note-php-syntax"
+next-title : "笔记 - PHP 语法"
 ---
 
 

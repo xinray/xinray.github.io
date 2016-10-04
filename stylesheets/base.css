@@ -4758,10 +4758,29 @@ ul.tags {
     margin: 0 auto;
   }
 }
-#reward .rewardQR{
+#reward .rewardQR {
   float: left;
 }
-#reward .rewardQR img{
+#reward .rewardQR img {
   width:250px;
   height: 300px;
+}
+#nextAndprevPage {
+  overflow: hidden;
+  margin-top: 20px;
+}
+.nppage a{
+
+}
+.prevPage {
+  float: left;
+  background: url('../images/arrow-left.png') no-repeat center left;
+  background-size:28px 20px;
+  padding-left: 30px;
+}
+.nextPage {
+  float: right;
+  background: url('../images/arrow-right.png') no-repeat center right;
+  background-size:28px 20px;
+  padding-right: 30px;
 }
