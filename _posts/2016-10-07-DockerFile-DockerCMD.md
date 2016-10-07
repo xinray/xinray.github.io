@@ -1,6 +1,14 @@
-# Docker学习笔记——DockerFile及命令
 
-标签（空格分隔）： docker
+---
+title: "Docker学习笔记——DockerFile及命令"
+layout: post
+category: Docker
+tags: [dd]
+excerpt: "本文主要介绍了Docker的好处,与VM比较,并介绍了组成及架构。"
+next-url: "note/note-php-syntax"
+next-title : "笔记 - PHP 语法"
+---
+
 
 ---
 上一篇对Docker做了简短的介绍，这一篇讲介绍Dockerfile的编写，以及常用命令。
