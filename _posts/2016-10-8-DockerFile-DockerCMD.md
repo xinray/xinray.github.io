@@ -71,8 +71,8 @@ MAINTAINER <name>
 >ADD &lt;src&gt;  &lt;dest&gt;
 
 ADD在和COPY相同的基础上，增加： <br />
-ADD 允许 &lt;src&gt;是一个 URL。 <br />
-ADD 的&lt;src&gt;是一个压缩格式文档&lt;src&gt;将会解压缩复制。 <br />
+1、ADD 允许 &lt;src&gt;是一个 URL。 <br />
+2、ADD 的&lt;src&gt;是一个压缩格式文档&lt;src&gt;将会解压缩复制。 <br />
 
 虽然ADD 比COPY功能多，但是还是推荐使用COPY作为文件的复制，因为ADD的行为有些越界，下载会使用CURL以及make命令。 <br />
 
@@ -155,6 +155,7 @@ ADD 的&lt;src&gt;是一个压缩格式文档&lt;src&gt;将会解压缩复制。
 例如：docker build -t test:1.0 . <br />
 后面要带上点 . <br />
 将会运行当前目录下的DockerFile，运行结果如下： <br />
+
 >Step 1 : FROM ubuntu:14.04 <br />
 > ---> a5a467fddcb8 <br />
 >Step 2 : MAINTAINER ray@gmail.com <br />
