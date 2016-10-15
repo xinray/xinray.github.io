@@ -177,6 +177,7 @@ diff会列出3种容器内文件状态变化（A - Add, D - Delete, C - Change �
 
 OPTIONS可以划分为： <br />
 a、设定操作执行方式： <br />
+
 >决定container的运行方式，前台执行还是后台执行 <br />
 >设定containerID <br />
 >设定network参数 <br />
