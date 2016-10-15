@@ -35,8 +35,7 @@ prev-title : "Docker学习笔记—介绍"
 第一条指令指定一个基本的镜像源，从公共库拉取一个镜像源。并且From必须是第一行。
 
 #### MAINTAINER
-MAINTAINER <name>
-
+`MAINTAINER <name>` <br />
 设置作者。
 
 #### LABEL

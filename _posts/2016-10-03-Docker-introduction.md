@@ -103,7 +103,8 @@ Docker 容器和文件夹很类似，一个Docker容器包含了所有的某个�
 
 # Docker 安装
 
-ubuntu 系列安装Docker Engine 参考 [官方安装文档]( http://docs.docker.com/engine/installation/#installation)
+ubuntu 系列安装Docker Engine
+参考 [官方安装文档]( http://docs.docker.com/engine/installation/#installation)
 
 ## 1、安装
 
