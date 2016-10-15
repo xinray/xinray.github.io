@@ -25,14 +25,14 @@ description: "XinRay's personal weblog, on coding or such stuff"
 
 my:
     displayName: Ray
-    realName: xinRay
+    realName: Ray
     realName_cn: xinRay
-    jobTitle: "程序员"
+    jobTitle: "CS"
     contact:
         email: wxinray@outlook.com
         github: http://www.github.com/xinray
         linkedin: http://www.linkedin.com/in/wanxinray
-        segmentfault: https://segmentfault.com/u/w_xin_ra_y
+        segmentfault: https://segmentfault.com/blog/wxinray
         stackoverflow: http://stackoverflow.com/users/6273960/ray
         csdn: http://blog.csdn.net/xin_ray
 

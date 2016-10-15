@@ -186,13 +186,20 @@ b、设定image的默认资源，即image使用者可以用此命令来覆盖ima
 默认情况下，所有的container都开启了网络接口，同时可以接受任何外部的数据请求。
 
 >--dns=[]         : Set custom dns servers for the container
---net="bridge"   : Set the Network mode for the container
-  'bridge': creates a new network stack for the container on the docker bridge
-  'none': no networking for this container
-  'container:<name|id>': reuses another container network stack
-  'host': use the host network stack inside the container
---add-host=""    : Add a line to /etc/hosts (host:IP)
---mac-address="" : Sets the container's Ethernet device's MAC address
+
+>--net="bridge"   : Set the Network mode for the container
+
+>  'bridge': creates a new network stack for the container on the docker bridge
+
+>  'none': no networking for this container
+
+>'container:<name	&#166; id>': reuses another container network stack
+
+> 'host': use the host network stack inside the container
+
+>--add-host=""    : Add a line to /etc/hosts (host:IP)
+
+>--mac-address="" : Sets the container's Ethernet device's MAC address
 
 可以通过docker run --net none 来关闭网络接口，此时将关闭所有网络数据的输入输出。此时只能通过STDIN,STDOUT或者files来完成I/O操作。
 
