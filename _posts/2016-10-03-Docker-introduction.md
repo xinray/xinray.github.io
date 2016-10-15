@@ -60,7 +60,7 @@ Docker 容器通过 Docker 镜像来创建。
 
 ## 详细结构：
 ![Docker-cs-structure](http://oeeycy0kn.bkt.clouddn.com/docker-csstructure.jpg)
-图片来源(http://www.wenwenyun.com/a/tip/2014/0926/552.html)
+[图片来源](http://www.wenwenyun.com/a/tip/2014/0926/552.html)
 
 **1、**用户是使用Docker Client与Docker Daemon建立通信，并发送请求给后者。
 
@@ -133,6 +133,7 @@ Share images, automate workflows, and more with a free Docker Hub account: https
 For more examples and ideas, visit:
  https://docs.docker.com/userguide/
 ```
+
 ## 3、配置(可选)
 
 -  创建 Docker 用户组
