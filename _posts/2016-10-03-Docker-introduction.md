@@ -27,6 +27,7 @@ Docker 是 [Docker.Inc](https://www.docker.com/) 公司开源的一个基于 LXC
 ## Docker 使用场景
 
 Docker通常用于如下场景：
+
 >* web应用的自动化打包和发布；
 >* 自动化测试和持续集成、发布；
 >* 在服务型环境中部署和调整数据库或其他的后台应用；
@@ -103,10 +104,14 @@ Docker 容器和文件夹很类似，一个Docker容器包含了所有的某个�
 # Docker 安装
 
 ubuntu 系列安装Docker Engine 参考 [官方安装文档]( http://docs.docker.com/engine/installation/#installation)
+
 ## 1、安装
+
 `$ sudo apt-get install -y docker.io`
 验证docker是否安装成功
+
 ## 2、验证
+
 ```
 sudo docker run hello-world
 
@@ -140,6 +145,7 @@ For more examples and ideas, visit:
 本文主要结合工作上的需求对docker的做简单介绍，详情可以参阅下面给出的参考链接，下一章节将会介绍DockerFile 编写，以及docker命令。
 
 # 参考资料
+
 >* [什么是Docker](http://www.docker.org.cn/book/docker/what-is-docker-16.html)
 >* [Docker应用场景](http://blog.flux7.com/blogs/docker/8-ways-to-use-docker-in-the-real-world)
 >* [Docker — 从入门到实践](https://yeasy.gitbooks.io/docker_practice/content/)
