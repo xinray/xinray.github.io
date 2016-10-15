@@ -27,11 +27,12 @@ my:
     displayName: Ray
     realName: xinRay
     realName_cn: xinRay
-    jobTitle: "Coder"
+    jobTitle: "程序员"
     contact:
         email: wxinray@outlook.com
         github: http://www.github.com/xinray
         linkedin: http://www.linkedin.com/in/wanxinray
+        segmentfault: https://segmentfault.com/u/w_xin_ra_y
         stackoverflow: http://stackoverflow.com/users/6273960/ray
         csdn: http://blog.csdn.net/xin_ray
 

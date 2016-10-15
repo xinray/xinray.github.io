@@ -1,5 +1,5 @@
 ---
-title: "PHP框架Laravel使用——ORM"
+title: "Laravel学习笔记—ORM"
 layout: post
 category: Background
 tags: [php,laravel]

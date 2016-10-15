@@ -1,11 +1,11 @@
 ---
-title: "Docker学习笔记——DockerFile及命令"
+title: "Docker学习笔记—DockerFile及命令"
 layout: post
 category: Server
 tags: [docker]
 excerpt: "本文主要介绍了DockerFile的编写规则,以及Docker 的运行指令。"
 prev-url: "server/Docker-introduction"
-prev-title : "Docker学习笔记——介绍"
+prev-title : "Docker学习笔记—介绍"
 ---
 
 上一篇对Docker做了简短的介绍，这一篇讲介绍Dockerfile的编写，以及常用命令。
@@ -26,40 +26,40 @@ prev-title : "Docker学习笔记——介绍"
 
 ## DockerFile 命令
 ### 基本语句
-#### 1、From
+#### From
 `FROM <image>
 FROM <image>:<tag>
 FROM <image>@<digest>`
 第一条指令指定一个基本的镜像源，从公共库拉取一个镜像源。并且From必须是第一行。
 
-#### 2、MAINTAINER
+#### MAINTAINER
 MAINTAINER <name>
 设置作者。
 
-#### 3、LABEL
+#### LABEL
 `LABEL <key>=<value> <key>=<value> <key>=<value>`
 设置�标签，采用键值对的形式。
-#### 4、RUN
+#### RUN
 `RUN <command>
 RUN ["executable", "param1", "param2"]`
 运行类linux 命令。
-#### 5、EXPOSE
+#### EXPOSE
 `EXPOSE <port> [<port>...]`
 用来指定容器的监听端口。
-#### 6、ENV
+#### ENV
 `ENV <key> <value>
 ENV <key>=<value>`
 设置环境变量的键值。
 
-#### 7、WORKDIR
+#### WORKDIR
 `WORKDIR /path/to/workdir`
 设置当前COPY ADD ENV 路径
 
-#### 8、ADD、COPY
+#### ADD、COPY
 复制文件。
 
 
-###  9、COPY 与 ADD
+###  COPY 与 ADD
 二者都是复制文件的作用
 >COPY &lt;src&gt;  &lt;dest&gt;
 >ADD &lt;src&gt;  &lt;dest&gt;
@@ -72,7 +72,7 @@ ADD 的&lt;src&gt;是一个压缩格式文档&lt;src&gt;将会解压缩复制。
 
 所以使用 COPY除非你确信你需要 ADD。
 
-### 10、CMD 与 Entrypoint
+### CMD 与 Entrypoint
 1、CMD 和 Entrypoint一般用于制作具备后台服务的镜像, 如启动nginx，php-fpm, mysql 等。
 2、DockerFile应至少指定一个CMD命令或Entrypoint。
 3、都可以指定shell或exec函数调用的方式执行命令。
@@ -216,7 +216,7 @@ Docker默认是将container设置为bridge模式。此时在host上面讲存在�
 －p 暴露连接的port
 
 ## 总结
-这篇文章主要介绍了DockerFile的编写使用规则以及CMD命令行的使用规则和功能。对于我在学习工程中遇到的坑进行了找重的介绍和整理。在docker run 命令中没有介绍全面（以后会重看并补充回来），直接介绍了两个需要注意的地方，详细可以参考[run参数详解](https://docs.docker.com/engine/reference/run/)。
+这篇文章主要介绍了DockerFile的编写使用规则以及CMD命令行的使用规则和功能。对于我在学习工程中遇到的坑进行了找重的介绍和整理。在docker run 命令中没有介绍全面（以后会重看并补充），直接介绍了两个需要注意的地方，详细可以参考[run参数详解](https://docs.docker.com/engine/reference/run/)。
 
 
 ## 参考资料

@@ -1,11 +1,11 @@
 ---
-title: "Docker学习笔记——介绍"
+title: "Docker学习笔记—介绍"
 layout: post
 category: Server
 tags: [docker]
 excerpt: "本文主要介绍了Docker的好处,与VM比较,并介绍了组成及架构。"
 next-url: "server/DockerFile-DockerCMD"
-next-title : "Docker学习笔记——DockerFile及命令"
+next-title : "Docker学习笔记—DockerFile及命令"
 ---
 
 
