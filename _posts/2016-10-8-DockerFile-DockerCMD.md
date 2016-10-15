@@ -22,9 +22,12 @@ prev-title : "Docker学习笔记—介绍"
 >7. 利用Cache。
 
 这里着重解释下第7条
-在建立Docker镜像的过程中,DockerFile 按层编译执行，每个指令的编译将去搜寻缓存里存在的，而不是创立一个新的镜像。例如：apt-get update时，将会使用缓存镜像并不会更新apt-get列表。  build镜像的时候加上'–no-cache=true' 选项即可不去寻找缓存里已有的镜像。除了ADD和COPY命令，缓存检查将不会查看容器中的文件，以确定缓存匹配。
+在建立Docker镜像的过程中,DockerFile 按层编译执行，每个指令的编译将去搜寻缓存里存在的，而不是创立一个新的镜像。
+
+例如：apt-get update时，将会使用缓存镜像并不会更新apt-get列表。  build镜像的时候加上'–no-cache=true' 选项即可不去寻找缓存里已有的镜像。除了ADD和COPY命令，缓存检查将不会查看容器中的文件，以确定缓存匹配。
 
 ## DockerFile 命令
+
 ### 基本语句
 
 #### From
@@ -43,15 +46,18 @@ MAINTAINER <name>
 `LABEL <key>=<value> <key>=<value> <key>=<value>`
 
 设置标签，采用键值对的形式。
+
 #### RUN
 `RUN <command>`
 `RUN ["executable", "param1", "param2"]`
 
 运行类linux 命令。
+
 #### EXPOSE
 `EXPOSE <port> [<port>...]`
 
 用来指定容器的监听端口。
+
 #### ENV
 `ENV <key> <value>`
 `ENV <key>=<value>`
@@ -83,7 +89,7 @@ ADD 的&lt;src&gt;是一个压缩格式文档&lt;src&gt;将会解压缩复制。
 ### CMD 与 Entrypoint
 1、CMD 和 Entrypoint一般用于制作具备后台服务的镜像, 如启动nginx，php-fpm, mysql 等。
 2、DockerFile应至少指定一个CMD命令或Entrypoint。
-3、都可以指定shell或exec函数调用的方式执行命令。  
+3、都可以指定shell或exec函数调用的方式执行命令。
 4、DockerFile run 启动镜像之后便会退出容器，需要一个长时间运行的命令，使得容器一直执行。
 
 >CMD ["executable","param1","param2"] （运行一个可执行的文件并提供参数）
