@@ -107,7 +107,7 @@ ubuntu 系列安装Docker Engine 参考 [官方安装文档]( http://docs.docker
 
 ## 1、安装
 
-`$ sudo apt-get install -y docker.io`
+`$ sudo apt-get install -y docker.io`</br>
 验证docker是否安装成功
 
 ## 2、验证
