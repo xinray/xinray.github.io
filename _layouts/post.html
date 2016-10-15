@@ -23,12 +23,12 @@
                     </ul>
                     {% endif %}
                     <p id="postMeta">posted on {{ page.date | date_to_string }} under category <a href="{{crturl}}category/">{{ page.categories[0] }}</a></p>
-
+                    {% include copyright.html %}
                 </header>
 
                 {{ content }}
-                {% include reward.html %}
-
+                <!--{% include reward.html %}-->
+                {% include copyright.html %}
                 <div id="nextAndprevPage">
                     {% if page.prev-title %}
                     <div class="prevPage nppage" >上一篇:<a href="{{crturl}}{{page.prev-url}}"> {{page.prev-title}}</a></div>
