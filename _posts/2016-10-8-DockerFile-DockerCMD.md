@@ -26,33 +26,41 @@ prev-title : "Docker学习笔记—介绍"
 
 ## DockerFile 命令
 ### 基本语句
+
 #### From
-`FROM <image>
-FROM <image>:<tag>
-FROM <image>@<digest>`
+`FROM <image>`
+`FROM <image>:<tag>`
+`FROM <image>@<digest>`
+
 第一条指令指定一个基本的镜像源，从公共库拉取一个镜像源。并且From必须是第一行。
 
 #### MAINTAINER
 MAINTAINER <name>
+
 设置作者。
 
 #### LABEL
 `LABEL <key>=<value> <key>=<value> <key>=<value>`
-设置�标签，采用键值对的形式。
+
+设置标签，采用键值对的形式。
 #### RUN
-`RUN <command>
-RUN ["executable", "param1", "param2"]`
+`RUN <command>`
+`RUN ["executable", "param1", "param2"]`
+
 运行类linux 命令。
 #### EXPOSE
 `EXPOSE <port> [<port>...]`
+
 用来指定容器的监听端口。
 #### ENV
-`ENV <key> <value>
-ENV <key>=<value>`
+`ENV <key> <value>`
+`ENV <key>=<value>`
+
 设置环境变量的键值。
 
 #### WORKDIR
 `WORKDIR /path/to/workdir`
+
 设置当前COPY ADD ENV 路径
 
 #### ADD、COPY
@@ -75,7 +83,7 @@ ADD 的&lt;src&gt;是一个压缩格式文档&lt;src&gt;将会解压缩复制。
 ### CMD 与 Entrypoint
 1、CMD 和 Entrypoint一般用于制作具备后台服务的镜像, 如启动nginx，php-fpm, mysql 等。
 2、DockerFile应至少指定一个CMD命令或Entrypoint。
-3、都可以指定shell或exec函数调用的方式执行命令。
+3、都可以指定shell或exec函数调用的方式执行命令。  
 4、DockerFile run 启动镜像之后便会退出容器，需要一个长时间运行的命令，使得容器一直执行。
 
 >CMD ["executable","param1","param2"] （运行一个可执行的文件并提供参数）
