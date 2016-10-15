@@ -31,8 +31,7 @@ prev-title : "Docker学习笔记—介绍"
 ### 基本语句
 
 #### From
-`FROM <image>`  `FROM <image>:<tag>`    `FROM <image>@<digest>`
-
+`FROM <image>` <br />`FROM <image>:<tag>`  <br /> `FROM <image>@<digest>` <br />
 第一条指令指定一个基本的镜像源，从公共库拉取一个镜像源。并且From必须是第一行。
 
 #### MAINTAINER
@@ -41,30 +40,25 @@ MAINTAINER <name>
 设置作者。
 
 #### LABEL
-`LABEL <key>=<value> <key>=<value> <key>=<value>`
-
+`LABEL <key>=<value> <key>=<value> <key>=<value>` <br />
 设置标签，采用键值对的形式。
 
 #### RUN
-`RUN <command>`
-`RUN ["executable", "param1", "param2"]`
-
+`RUN <command>` <br />
+`RUN ["executable", "param1", "param2"]` <br />
 运行类linux 命令。
 
 #### EXPOSE
-`EXPOSE <port> [<port>...]`
-
+`EXPOSE <port> [<port>...]` <br />
 用来指定容器的监听端口。
 
 #### ENV
-`ENV <key> <value>`
-`ENV <key>=<value>`
-
+`ENV <key> <value>` <br />
+`ENV <key>=<value>` <br />
 设置环境变量的键值。
 
 #### WORKDIR
-`WORKDIR /path/to/workdir`
-
+`WORKDIR /path/to/workdir` <br />
 设置当前COPY ADD ENV 路径
 
 #### ADD、COPY
@@ -73,123 +67,134 @@ MAINTAINER <name>
 
 ###  COPY 与 ADD
 二者都是复制文件的作用
->COPY &lt;src&gt;  &lt;dest&gt;
+>COPY &lt;src&gt;  &lt;dest&gt; <br />
 >ADD &lt;src&gt;  &lt;dest&gt;
 
-ADD在和COPY相同的基础上，增加：
+ADD在和COPY相同的基础上，增加： <br />
+ADD 允许 &lt;src&gt;是一个 URL。 <br />
+ADD 的&lt;src&gt;是一个压缩格式文档&lt;src&gt;将会解压缩复制。 <br />
 
-ADD 允许 &lt;src&gt;是一个 URL
-
-ADD 的&lt;src&gt;是一个压缩格式文档&lt;src&gt;将会解压缩复制。
-
-虽然ADD 比COPY功能多，但是还是推荐使用COPY作为文件的复制，因为ADD的行为有些越界，下载会使用CURL以及make命令。
+虽然ADD 比COPY功能多，但是还是推荐使用COPY作为文件的复制，因为ADD的行为有些越界，下载会使用CURL以及make命令。 <br />
 
 所以使用 COPY除非你确信你需要 ADD。
 
 ### CMD 与 Entrypoint
-1、CMD 和 Entrypoint一般用于制作具备后台服务的镜像, 如启动nginx，php-fpm, mysql 等。
-
-2、DockerFile应至少指定一个CMD命令或Entrypoint。
-
-3、都可以指定shell或exec函数调用的方式执行命令。
-
+1、CMD 和 Entrypoint一般用于制作具备后台服务的镜像, 如启动nginx，php-fpm, mysql 等。 <br />
+2、DockerFile应至少指定一个CMD命令或Entrypoint。 <br />
+3、都可以指定shell或exec函数调用的方式执行命令。 <br />
 4、DockerFile run 启动镜像之后便会退出容器，需要一个长时间运行的命令，使得容器一直执行。
 
->CMD ["executable","param1","param2"] （运行一个可执行的文件并提供参数）
->CMD ["param1","param2"]  （为ENTRYPOINT指定参数）  
->CMD command param1 param2 (以”/bin/sh -c”的方法执行的命令)
->ENTRYPOINT ["executable", "param1", "param2"] (首选执行形式)
->ENTRYPOINT command param1 param2 (以”/bin/sh -c”的方法执行的命令)
+>CMD ["executable","param1","param2"] （运行一个可执行的文件并提供参数） <br />
+>CMD ["param1","param2"]  （为ENTRYPOINT指定参数）   <br />
+>CMD command param1 param2 (以”/bin/sh -c”的方法执行的命令) <br />
 
-区别:
-1、一个Dockerfile只能有一个CMD/ENTRYPOINT指令，如果有超过一个CMD将只启动并有效最后一个。
-2、CMD在运行时会被command覆盖, ENTRYPOINT不会被运行时的command覆盖。
-3、如果在Dockerfile中同时写了entrypoint和cmd则，docker在build过程中会将cmd中指定的内容作为entrypoint的参数。
+>ENTRYPOINT ["executable", "param1", "param2"] (首选执行形式) <br />
+>ENTRYPOINT command param1 param2 (以”/bin/sh -c”的方法执行的命令) <br />
+
+区别: <br />
+1、一个Dockerfile只能有一个CMD/ENTRYPOINT指令，如果有超过一个CMD将只启动并有效最后一个。 <br />
+2、CMD在运行时会被command覆盖, ENTRYPOINT不会被运行时的command覆盖。 <br />
+3、如果在Dockerfile中同时写了entrypoint和cmd则，docker在build过程中会将cmd中指定的内容作为entrypoint的参数。 <br />
 
 需要初始化运行多个命令，彼此之间可以使用 && 隔开，但最后一个须要为无限运行的命令
 
 ### 注意
-1、开始时RUN apt-get update  最后要清除apt 的缓存并移除 /var/lib/apt/lists 文件下的内容，使得镜像文件小。
+开始时RUN apt-get update  最后要清除apt 的缓存并移除 /var/lib/apt/lists 文件下的内容，使得镜像文件小。
 
 # Docker 命令行
 参见 [官方手册](https://docs.docker.com/engine/reference/commandline/)
+
 ## 环境信息相关
-**info** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本地的配置信息
-**version**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;显示Docker的版本号，API版本号，Git commit， Docker客户端和后台进程的Go版本号
+
+**info** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本地的配置信息 <br />
+**version**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;显示Docker的版本号，API版本号，Git commit， Docker客户端和后台进程的Go版本号 <br />
+
 ## 系统运维相关
-**attach**
-**build**
-**commit**
-**cp**
-**diff**
-**export** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;把容器系统文件打包并导出来，方便分发给其他场景使用。
-**images**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可查看所创建的镜像,默认只显示最顶层的Image
-**import/save/load**
-**inspect** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;杀掉容器的进程
-**kill** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;杀掉容器的进程。
-**port** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;打印出Host主机端口与容器暴露出的端口的NAT映射关系
-**pause/unpause**
-**ps** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;打印出正在运行的容器，docker ps -a打印出所有运行过的容器。
-**rm** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;删除指定的容器。
-**rmi** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`docker rmi IMAGE [IMAGE...]`删除失败镜像
-**run**
-**start/stop/restart**
-**tag** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;组合使用用户名，Image名字，标签名来组织管理Image。
-**top** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;显示容器內运行的进程。
-**wait** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;阻塞对指定容器的其他调用方法，直到容器停止后退出阻塞。
+**attach** <br />
+**build** <br />
+**commit** <br />
+**cp** <br />
+**diff** <br />
+**export** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;把容器系统文件打包并导出来，方便分发给其他场景使用。 <br />
+**images**  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可查看所创建的镜像,默认只显示最顶层的Image <br />
+**import/save/load** <br />
+**inspect** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;杀掉容器的进程。 <br />
+**kill** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;杀掉容器的进程。 <br />
+**port** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;打印出Host主机端口与容器暴露出的端口的NAT映射关系 <br />
+**pause/unpause** <br />
+**ps** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;打印出正在运行的容器，docker ps -a打印出所有运行过的容器。 <br />
+**rm** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;删除指定的容器。 <br />
+**rmi** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`docker rmi IMAGE [IMAGE...]`删除失败镜像 <br />
+**run** <br />
+**start/stop/restart** <br />
+**tag** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;组合使用用户名，Image名字，标签名来组织管理Image。 <br />
+**top** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;显示容器內运行的进程。 <br />
+**wait** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;阻塞对指定容器的其他调用方法，直到容器停止后退出阻塞。 <br />
+
 ## 日志信息相关
-**events** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;打印容器实时的系统事件。
-**history** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;打印指定Image中每一层Image命令行的历史记录。
-**logs** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;批量打印出容器中进程的运行日志。
+
+**events** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;打印容器实时的系统事件。 <br />
+**history** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;打印指定Image中每一层Image命令行的历史记录。 <br />
+**logs** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;批量打印出容器中进程的运行日志。 <br />
+
 ## Docker Hub服务相关
-**login** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;登录Hub服务。
-**pull/push** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过此命令分享Image到Hub服务或者自服务的Registry服务。
-**search** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过关键字搜索分享的Image。
+
+**login** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;登录Hub服务。 <br />
+**pull/push** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过此命令分享Image到Hub服务或者自服务的Registry服务。 <br />
+**search** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过关键字搜索分享的Image。 <br />
 
 ## 主要命令介绍：
 
 ### attach
-`docker attach [OPTIONS] CONTAINER`
-挂载正在后台运行的容器，在开发应用的过程中运用这个命令可以随时观察容器內进程的运行状况。
-### build
-`docker build [options] <path>`
-例如：docker build -t test:1.0 .
-后面要带上点 .
-将会运行当前目录下的DockerFile，运行结果如下：
-Step 1 : FROM ubuntu:14.04
- ---> a5a467fddcb8
-Step 2 : MAINTAINER ray@gmail.com
- ---> Running in ce9e7b02f075
- ---> 332259a92e74
 
-如标题一所说 每一层都有一个层的cache id。
+`docker attach [OPTIONS] CONTAINER` <br />
+挂载正在后台运行的容器，在开发应用的过程中运用这个命令可以随时观察容器內进程的运行状况。
+
+### build
+`docker build [options] <path>` <br />
+例如：docker build -t test:1.0 . <br />
+后面要带上点 . <br />
+将会运行当前目录下的DockerFile，运行结果如下： <br />
+>Step 1 : FROM ubuntu:14.04 <br />
+> ---> a5a467fddcb8 <br />
+>Step 2 : MAINTAINER ray@gmail.com <br />
+> ---> Running in ce9e7b02f075 <br />
+> ---> 332259a92e74 <br />
+
+如标题一所说 每一层都有一个层的cache id。 <br />
+
 ### diff
-`docker diff CONTAINER`
-diff会列出3种容器内文件状态变化（A - Add, D - Delete, C - Change ）的列表清单。
+
+`docker diff CONTAINER` <br />
+diff会列出3种容器内文件状态变化（A - Add, D - Delete, C - Change ）的列表清单。 <br />
 
 ### [run](https://docs.docker.com/engine/reference/run/)
-详细的请看官方文档，没有写详细，以后补充。
-`docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`
-运行镜像启动容器。
 
-OPTIONS可以划分为：
-a、设定操作执行方式：
->决定container的运行方式，前台执行还是后台执行
->设定containerID
->设定network参数
->设定container的CPU和Memory参数
->设定权限(Privileges )和LXC参数
+详细的请看官方文档，没有写详细，以后补充。 <br />
+`docker run [OPTIONS] IMAGE [COMMAND] [ARG...]` <br />
+运行镜像启动容器。 <br />
+
+OPTIONS可以划分为： <br />
+a、设定操作执行方式： <br />
+>决定container的运行方式，前台执行还是后台执行 <br />
+>设定containerID <br />
+>设定network参数 <br />
+>设定container的CPU和Memory参数 <br />
+>设定权限(Privileges )和LXC参数 <br />
 
 b、设定image的默认资源，即image使用者可以用此命令来覆盖image开发者在build阶段所设定的默认值。
 
 #### 参数解析
+
 ##### 1、Detached vs foreground
-`-d=true`
+
+`-d=true` <br />
 
 - containter将会运行在后台模式(Detached mode)，并打印容器id。
 - container不再监听你执行docker。
 - 此时所有I/O数据只能通过网络资源或者共享卷组来进行交互。
 - 但可以通过执行docker attach 来重新挂载这个container里面。
+
 **注：**执行-d使container进入后台模式，那么将无法配合"--rm"参数。
 
 `-d=false`
@@ -201,36 +206,31 @@ b、设定image的默认资源，即image使用者可以用此命令来覆盖ima
 
 默认情况下，所有的container都开启了网络接口，同时可以接受任何外部的数据请求。
 
->--dns=[]         : Set custom dns servers for the container
-
->--net="bridge"   : Set the Network mode for the container
-
->  'bridge': creates a new network stack for the container on the docker bridge
-
->  'none': no networking for this container
-
->'container:<name	&#166; id>': reuses another container network stack
-
-> 'host': use the host network stack inside the container
-
->--add-host=""    : Add a line to /etc/hosts (host:IP)
-
->--mac-address="" : Sets the container's Ethernet device's MAC address
+>--dns=[]         : Set custom dns servers for the container<br />
+>--net="bridge"   : Set the Network mode for the container<br />
+>  'bridge': creates a new network stack for the container on the docker bridge<br />
+>  'none': no networking for this container<br />
+>'container:<name	&#166; id>': reuses another container network stack<br />
+> 'host': use the host network stack inside the container<br />
+>--add-host=""    : Add a line to /etc/hosts (host:IP)<br />
+>--mac-address="" : Sets the container's Ethernet device's MAC address><br />
 
 可以通过docker run --net none 来关闭网络接口，此时将关闭所有网络数据的输入输出。此时只能通过STDIN,STDOUT或者files来完成I/O操作。
 
 以下是网络设置中常用的参数：
 
-- none 关闭container内的网络连接
-- bridge 通过veth接口来连接contianer 默认选项
-- host 允许container使用host的网络堆栈信息。 **注：**这种方式将允许container访问host中类似D-BUS之类的系统服务，所以被认为是不安全的 。
-- container 使用另外一个container的网络堆栈信息。
+- none 关闭container内的网络连接<br />
+- bridge 通过veth接口来连接contianer 默认选项<br />
+- host 允许container使用host的网络堆栈信息。 **注：**这种方式将允许container访问host中类似D-BUS之类的系统服务，所以被认为是不安全的 。<br />
+- container 使用另外一个container的网络堆栈信息。<br />
 - None：将网络模式设置为none时，这个container将不允许访问任何外部router。这个container内部只会有一个loopback接口，而且不存在任何可以访问外部网络的router。
 
 **Bridge：**
+
 Docker默认是将container设置为bridge模式。此时在host上面讲存在一个docker0的网络接口，同时会针对container创建一对veth接口。其中一个veth接口是在host充当网卡桥接作用，另外一个veth接口存在于container的命名空间中，并且指向container的loopback。Docker会自动给这个container分配一个IP，并且将container内的数据通过桥接转发到外部。
 
 **Host：**
+
 当网络模式设置为host时，这个container将完全共享host的网络堆栈。host所有的网络接口将完全对container开放。container的主机名也会存在于host的hostname中。这时，container所有对外暴露的port和对其它container的link，将完全失效。
 
 通过host 启动     docker run --net=host  -i -t deployment:1.0 /bin/bash   这样可以通过镜像连接本地端数据库。
