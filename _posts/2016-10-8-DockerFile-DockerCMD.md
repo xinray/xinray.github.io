@@ -13,6 +13,7 @@ prev-title : "Docker学习笔记—介绍"
 # DockerFile
 
 ## [一般准则和建议](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/)
+
 >1. 容器尽可能短小。
 >2. 要会利用 .dockerignore 文件。
 >3. 避免安装不必要的包。

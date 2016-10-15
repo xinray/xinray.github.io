@@ -10,12 +10,15 @@ next-title : "Docker学习笔记—DockerFile及命令"
 
 
 实习的时候接触到Docker 也用了一段时间，整理一下对docker的理解。
+
 # 什么是Docker
+
 Docker 是 [Docker.Inc](https://www.docker.com/) 公司开源的一个基于 LXC技术之上构建的Container容器引擎， 源代码托管在 GitHub 上, 基于Go语言并遵从Apache2.0协议开源。
 
 ![Docker-logo](http://oeeycy0kn.bkt.clouddn.com/docker-logo-compressed.png)
 
 官网解释：
+
 > Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications
 
 因此可以把Docker理解为超轻量虚拟机的一种实现。
